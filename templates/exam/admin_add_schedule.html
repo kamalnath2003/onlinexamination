@@ -1,0 +1,27 @@
+{% extends 'exam/adminbase.html' %}
+{% load widget_tweaks %}
+{% block content %}
+</head>
+<h2 style="text-align:center;">Add Question</h2>
+<form method="POST" autocomplete="off" style="margin:100px;margin-top: 0px;">
+    {%csrf_token%}
+    <div class="form-group">
+        <br>
+      <label for="option1">Time</label>
+      {% render_field questionForm.option1|attr:'required:true' class="form-control form-control-sm rounded-0" placeholder="Example: 20:00:00" %}
+        <br>
+      <label for="option2">Date</label>
+      {% render_field questionForm.option2|attr:'required:true' class="form-control form-control-sm rounded-0" placeholder="Example: 23:05:2020" %}
+        <br>
+      <label for="option3">Duration in hours</label>
+      {% render_field questionForm.option3|attr:'required:true' class="form-control form-control-sm rounded-0" placeholder="Example: 60 mins" %}
+        <br>
+
+    </div>
+    
+
+    <button type="submit" class="btn btn-success" style="border-radius:0px;">Schedule exam</button>
+  </form>
+<br><br><br>
+{% endblock content %}
+e
